@@ -12,8 +12,8 @@
 
 ---> PROJECT DETAILS
 
-- Project structure based on MVC. Basic structure of Models and Controllers was created with Zend Framework tools with this purpose.
-- Controllers/IndexController.php: It's the main controller, with a main function to call another specific function to View, upload, or download image depending on the data received in $_POST.
+- Project structure based on MVC. Basic structure of Models and Controllers was created with Zend Framework tools with this purpose. Layout "redirect" to index view with HTML and CSS code.
+- Controllers/IndexController.php: It's the main controller, with a main function to call another specific function to visualice, upload, or download image depending on the data received in $_POST. Controller send information to the view (views/scripts/index/index.phmtl)
 - Models/DBTable/Image.php: Basic model that allows insert new image on database. Specific methods to update "Views" and "Downloads" fields values.
 - Images are uploaded to public/uploads folder, with a reference (image name) saved in database
 - Extensions supported: .jpeg, .png
