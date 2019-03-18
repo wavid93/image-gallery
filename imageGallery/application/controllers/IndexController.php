@@ -8,12 +8,14 @@ class IndexController extends Zend_Controller_Action
     private $imageModel;
     private $db;
 
+    //Initialize controller
     public function init()
     {
         $this->imageModel = new Application_Model_DbTable_Image();
         $this->db = $this->imageModel->getDbConfig();
     }
 
+    //Main controller function
     public function indexAction()
     {
         //Send image data to view
@@ -39,6 +41,7 @@ class IndexController extends Zend_Controller_Action
 
     }
 
+    //Get image from local folder through img ID reference
     private function viewImage($imgID)
     {
         $imgUrl = $this->db->query("SELECT image FROM images WHERE id = '$imgID'");
@@ -47,6 +50,7 @@ class IndexController extends Zend_Controller_Action
         header('Location: uploads/'.$res["image"]);
     }
 
+    //Download image to local computer
     private function downloadImage()
     {
 
@@ -88,6 +92,7 @@ class IndexController extends Zend_Controller_Action
         }
     }
 
+    //Upload image from local computer
     private function uploadImage()
     {
         $checkImageSelected = getimagesize($_FILES["image"]["tmp_name"]);
@@ -121,6 +126,7 @@ class IndexController extends Zend_Controller_Action
         }
     }
 
+    //Check image data
     private function check_valid_image( $file ) {
 
         //Check mimetype
