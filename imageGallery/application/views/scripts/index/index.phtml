@@ -1,0 +1,120 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<head>
+    <h1 align="center">Image Gallery</h1>
+</head>
+
+<body>
+    <span style="margin-left: 100px">
+        <div class="row omb_row-sm-offset-3">
+            <div class="col-xs-12 col-sm-6">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input name="title" id="title" placeholder="Title" align="center" type="text" class="form-control">
+                    </div>
+                    <span class="help-block"></span>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input class="form-control" type="file" name="image" id="fileToUpload" align="center">
+                    </div>
+                    <br>
+                    <input class="btn btn-lg btn-primary btn-block"type="submit" value="Upload" name="submit" align="center"></input>
+                </form>
+            </div>
+        </div>
+    </span>
+
+
+    <div id="showgrid" style="margin-top:20px">
+        <div class="row">
+            <?php foreach($this->data as $img):
+            ?>
+            <div class="column">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <button style="margin-left: 20px;margin-top: 10px;" name="actionView" value="<?php echo $img["id"]; ?>"><img src="/uploads/<?php echo $img["image"]; ?>" width="170" height="150" ></button>
+                </form>
+                <div style="margin-left: 20px; bord" class="row">
+                    <div>
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <button style="margin-top:-15px" name="actionView" value="<?php echo $img['id']; ?>" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </button>
+                            <?php echo $img['views']; ?>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" value="<?php echo $img['id']; ?>" name="imageID">
+                            <button style="margin-top: -20px" class="btn btn-default btn-sm" value="Download" name="download">
+                                <span class="glyphicon glyphicon-download-alt"></span>
+                            </button>
+                            <div style="margin-left: 38px;margin-top: -18px"><?php echo $img['downloads']; ?></div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <?php
+            endforeach; ?>
+        </div>
+    </div>
+
+</body>
+
+<style>
+    @media screen and (min-device-width:698px) {
+        div#showgrid {
+            width: 698px;
+            margin: auto;
+        }
+    }
+
+    div.column {
+        border-style: solid;
+        border-width: 1px;
+        align-content: center;
+    }
+
+    .row {
+        width: 100%;
+        margin: auto;
+
+    }
+
+    @media (min-device-width: 698px) {
+        .column {
+            width: 230px;
+            height: 230px;
+            display: inline;
+            float: left;
+            align-content: center;
+        }
+    }
+
+    .column {
+        width: 230px;
+        height: 230px;
+        margin: auto;
+        align-content: center;
+    }
+
+    @media (min-width: 768px) {
+        .omb_row-sm-offset-3 div:first-child[class*="col-"] {
+            margin-left: 25%;
+        }
+    }
+
+    .omb_login .omb_socialButtons a {
+        color: white; // In yourUse @body-bg
+    opacity:0.9;
+    }
+    .omb_login .omb_socialButtons a:hover {
+        color: white;
+        opacity:1;
+    }
+
+</style>
