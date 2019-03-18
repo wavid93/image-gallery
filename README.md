@@ -10,7 +10,7 @@
 - Apache
 - MySQL: Create table database: "image_gallery". Create table named: "images". SQL QUERY can be found on application/config/dbcreatetablequery file.
 
----> DETAILS ABOUT THE PROJECT
+---> PROJECT DETAILS
 
 - Project structure based on MVC. Basic structure of Models and Controllers was created with Zend Framework tools with this purpose.
 - Controllers/IndexController.php: It's the main controller, with a main function to call another specific function to View, upload, or download image depending on the data received in $_POST.
