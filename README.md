@@ -21,3 +21,7 @@
 ---> MORE INFO
 
 - Due to lack of time, I could not start the deployment of a docker image on HEROKU / AWS platforms.
+
+---> SCREENSHOT
+
+![alt text](http://oi64.tinypic.com/350jed4.jpg)
