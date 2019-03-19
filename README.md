@@ -21,7 +21,7 @@
 
 ---> MORE INFO
 
-- Due to lack of time, I could not start the deployment of a docker image on HEROKU / AWS platforms. 
+- Due to lack of time, I could not start the deployment of a docker image on HEROKU / AWS platforms (unexpected errors configuring docker-compose.yml)
 
 ---> SCREENSHOT
 
